@@ -12,7 +12,6 @@ import butterknife.ButterKnife;
 public class Login extends AppCompatActivity {
     @BindView(R.id.loginButton) Button mLoginButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
