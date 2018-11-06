@@ -10,6 +10,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 public class RoyalDesign extends AppCompatActivity {
     @BindView(R.id.listView) ListView mListView;
     private TextView mLocationTextView;
@@ -17,6 +18,7 @@ public class RoyalDesign extends AppCompatActivity {
     private String[] royal_desigs = new String[]{"Mi Mero Mole", "Mother's Bistro",
             "Life of Pie", "Screen Door", "Luc Lac", "Sweet Basil",
             "Slappy Cakes", "Equinox", "Lardo", "Portland City Grill"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
