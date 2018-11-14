@@ -4,36 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/g"
     tools:context=".MainActivity"
     >
 
 
     <TextView
+        android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/appNameTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="31dp"
         android:text="welcome to Royal Design fashion "
-
-        android:layout_marginTop="20sp"
-        android:textSize="25sp"
-        android:layout_gravity="center" />
+        android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="177dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
         android:text="See the trending cloths with us"
-        android:textSize="15sp"
-        android:layout_marginTop="40sp"
-        />
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/findRoyalDesignButton"
         android:layout_width="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="122dp"
+        android:layout_marginRight="122dp"
+        android:layout_marginBottom="86dp"
         android:text="  Continue" />
 
 
