@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,6 +20,7 @@ import okhttp3.Response;
 
 public class RoyalDesign extends AppCompatActivity {
     public static final String TAG = RoyalDesign.class.getSimpleName();
+    public ArrayList<Fashion> mFashions= new ArrayList<>();
     @BindView(R.id.listView) ListView mListView;
     private TextView mLocationTextView;
 //    private ListView mListView =(ListView) findViewById(R.id.listView);
@@ -39,7 +41,8 @@ public class RoyalDesign extends AppCompatActivity {
     }
 
     public void getFashions(){
-        FashionService.findFashion(new Callback() {
+        final FashionService fashionService= new FashionService();
+        fashionService.findFashion(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
@@ -47,9 +50,11 @@ public class RoyalDesign extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+                mFashions = fashionService.processResults(response);
                 try {
-                    String jsonData= response.body().string();
-                    Log.v("ephadesign", jsonData);
+                   String jsonData= response.body().string();
+                   Log.v("WesAmekam", jsonData);
+
                 }catch (IOException e){
                     e.printStackTrace();
                 }
