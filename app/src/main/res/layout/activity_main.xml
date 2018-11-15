@@ -1,66 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@drawable/bckg">
-    >
+    android:background="@drawable/bckgrnde">
+
 
 
     <TextView
         android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="31dp"
-        android:text="welcome to Royal Design fashion "
-        android:textSize="25sp" />
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:textColor="#000"
+        android:text="Royal Design fashion"
+        android:textSize="30sp" />
 
     <TextView
+        android:id="@+id/mottoEntry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="180sp"
-        android:layout_marginEnd="83sp"
-        android:layout_marginRight="83sp"
+        android:layout_marginTop="20sp"
+        android:layout_gravity="center"
+        android:textColor="#000"
         android:text="See the trending cloths with us"
-        android:textSize="20sp" />
+        android:textSize="30sp" />
 
-
-    <Button
-        android:id="@+id/findLogInButton"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="252sp"
-        android:layout_marginRight="252sp"
-        android:layout_marginBottom="112sp"
-        android:text="  LOGIN" />
+        android:orientation="horizontal"
+        android:layout_marginTop="50sp"
+        android:weightSum="2"
+        >
 
-    <Button
-        android:id="@+id/findSignUpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="45sp"
-        android:layout_marginRight="45sp"
-        android:layout_marginBottom="117sp"
-        android:text="  SIGN UP" />
+        <Button
+            android:id="@+id/findLogInButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="20sp"
+            android:background="@color/colorPrimary"
+            android:text="  LOGIN" />
 
+        <Button
+            android:id="@+id/findSignUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="20sp"
+            android:background="@color/colorPrimary"
+            android:text="  SIGN UP" />
 
+    </LinearLayout>
 
-
-
-
-</RelativeLayout>
+</LinearLayout>
