@@ -43,15 +43,16 @@ public class FashionService {
         try {
             String jsonData= response.body().string();
             if (response.isSuccessful()){
-//                Log.i("ephaDesignsHello",jsonData);
-                JSONArray fashionJSON = new JSONArray(jsonData);
+                Log.i("ephaDesignsHello",jsonData);
+                JSONObject allDataJSON = new JSONObject(jsonData);
+                JSONArray fashionJSON = allDataJSON.getJSONArray("results");
                 for (int i=0; i<fashionJSON.length(); i++){
                     JSONObject imageJSON = fashionJSON.getJSONObject(i);
-                    JSONObject category= imageJSON.getJSONObject("users");
-                    String name= category.getString("id");
+                    String id= imageJSON.getString("id");
+                    JSONObject imageUrlJSON= imageJSON.getJSONObject("urls");
+                    String image= imageUrlJSON.getString("small");
 
-
-                    Fashion fashion= new Fashion(name);
+                    Fashion fashion= new Fashion(id, image);
                     fashions.add(fashion);
                 }
             }

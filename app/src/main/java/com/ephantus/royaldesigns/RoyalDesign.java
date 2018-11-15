@@ -3,6 +3,8 @@ package com.ephantus.royaldesigns;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -21,12 +23,11 @@ import okhttp3.Response;
 public class RoyalDesign extends AppCompatActivity {
     public static final String TAG = RoyalDesign.class.getSimpleName();
     public ArrayList<Fashion> mFashions= new ArrayList<>();
-    @BindView(R.id.listView) ListView mListView;
-    private TextView mLocationTextView;
-//    private ListView mListView =(ListView) findViewById(R.id.listView);
-    private String[] royal_desigs = new String[]{"T-shit T-shirt", "Jeans Jeans",
-            "Jacket Jacket", "Dress Dress", "Boxer boxer"};
 
+//    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+
+    private FashionListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +35,8 @@ public class RoyalDesign extends AppCompatActivity {
         setContentView(R.layout.activity_royal_design);
 
         ButterKnife.bind(this);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, royal_desigs);
-        mListView.setAdapter(adapter);
+//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, royal_desigs);
+//        mListView.setAdapter(adapter);
 
         getFashions();
     }
@@ -45,19 +46,24 @@ public class RoyalDesign extends AppCompatActivity {
         fashionService.findFashion(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                Log.e("HelloThea",e.getMessage());
                 e.printStackTrace();
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 mFashions = fashionService.processResults(response);
-                try {
-                   String jsonData= response.body().string();
-                   Log.v("WesAmekam", jsonData);
 
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
+                RoyalDesign.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter= new FashionListAdapter(getApplicationContext(), mFashions);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(RoyalDesign.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
+                    }
+                });
             }
         });
     }
