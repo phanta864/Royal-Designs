@@ -19,6 +19,8 @@ import butterknife.ButterKnife;
 
 public class FashionListAdapter extends RecyclerView.Adapter<FashionListAdapter.FashionViewHolder> {
     private ArrayList<Fashion> mFashions= new ArrayList<>();
+    public static final int MAX_WIDTH = 600;
+    public static final int MAX_HEIGHT = 700;
     private Context mContext;
 
     public FashionListAdapter(Context context, ArrayList<Fashion> fashions){
@@ -45,8 +47,9 @@ public class FashionListAdapter extends RecyclerView.Adapter<FashionListAdapter.
 
     public class FashionViewHolder extends RecyclerView.ViewHolder{
         @BindView(R.id.fashionListTextView)TextView mTextView;
-        @BindView(R.id.imageView)
-        ImageView mImageView;
+        @BindView(R.id.usernameTextView) TextView mUsername;
+        @BindView(R.id.locationTextView) TextView mLocation;
+        @BindView(R.id.imageView) ImageView mImageView;
 
         private Context mContext;
 
@@ -57,8 +60,10 @@ public class FashionListAdapter extends RecyclerView.Adapter<FashionListAdapter.
         }
 
         public void bindFashion(Fashion fashion){
-            mTextView.setText(fashion.getmName());
+            mTextView.setText("Description \n" + fashion.getmName());
             Picasso.get().load(fashion.getmImageUrl()).into(mImageView);
+            mUsername.setText("Designer \n" + fashion.getmUsername());
+            mLocation.setText("Located At \n" + fashion.getmLocation());
         }
 
     }
