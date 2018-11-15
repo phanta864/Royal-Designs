@@ -48,11 +48,16 @@ public class FashionService {
                 JSONArray fashionJSON = allDataJSON.getJSONArray("results");
                 for (int i=0; i<fashionJSON.length(); i++){
                     JSONObject imageJSON = fashionJSON.getJSONObject(i);
-                    String id= imageJSON.getString("id");
+                    String name = imageJSON.getString("description");
                     JSONObject imageUrlJSON= imageJSON.getJSONObject("urls");
                     String image= imageUrlJSON.getString("small");
+                    JSONObject userJSON = fashionJSON.getJSONObject(i);
+                    JSONObject userNAMEJSON =  userJSON.getJSONObject("user");
+                    String username = userNAMEJSON.getString("username");
+                    String location = userNAMEJSON.getString("location");
 
-                    Fashion fashion= new Fashion(id, image);
+
+                    Fashion fashion= new Fashion(image, name, username, location);
                     fashions.add(fashion);
                 }
             }
