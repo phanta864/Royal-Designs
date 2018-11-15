@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@drawable/bckg">
     >
 
 
@@ -22,28 +22,44 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="177dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_marginTop="180sp"
+        android:layout_marginEnd="83sp"
+        android:layout_marginRight="83sp"
         android:text="See the trending cloths with us"
-        android:textSize="15sp" />
+        android:textSize="20sp" />
+
 
     <Button
-        android:id="@+id/findRoyalDesignButton"
+        android:id="@+id/findLogInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="122dp"
-        android:layout_marginRight="122dp"
-        android:layout_marginBottom="86dp"
-        android:text="  Continue" />
+        android:layout_marginEnd="252sp"
+        android:layout_marginRight="252sp"
+        android:layout_marginBottom="112sp"
+        android:text="  LOGIN" />
+
+    <Button
+        android:id="@+id/findSignUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="45sp"
+        android:layout_marginRight="45sp"
+        android:layout_marginBottom="117sp"
+        android:text="  SIGN UP" />
+
+
+
 
 
 
