@@ -28,7 +28,10 @@ public class RoyalDesign extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
 
     private FashionListAdapter mAdapter;
-
+    @Override
+    public void onBackPressed(){
+        moveTaskToBack(false);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
