@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "38222782009",
+    "firebase_url": "https://royaldesigns-b93c1.firebaseio.com",
+    "project_id": "royaldesigns-b93c1",
+    "storage_bucket": "royaldesigns-b93c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38222782009:android:47119146010e57e7",
+        "android_client_info": {
+          "package_name": "com.ephantus.royaldesigns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38222782009-pit6p0e7as7qpl5o75g3up23o4s3k7rr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ephantus.royaldesigns",
+            "certificate_hash": "15959bb67ef9734a3344a3f179a3d71caa814c04"
+          }
+        },
+        {
+          "client_id": "38222782009-686kiocr1kp2363i8rinr3ni11mldtvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkzPhGpBsBLkDQZH3Ia9A2Ppn8UTFoVF0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38222782009-686kiocr1kp2363i8rinr3ni11mldtvi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
